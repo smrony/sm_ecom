@@ -3,18 +3,18 @@
 
     <head>
         <!-- header -->
-        @include('include.header')
+        @include('admin.include.header')
         <!-- header end -->
     </head>
 
     <body>
         <!-- nav -->
-        @include('include.nav')
+        @include('admin.include.nav')
         <!-- nav end -->
         <div class="container-fluid">
             <div class="row">
                 <!-- sidebar -->
-                @include('include.sidebar')
+                @include('admin.include.sidebar')
                 <!-- sidebar end -->
                 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                     <div
@@ -38,7 +38,7 @@
             </div>
         </div>
         <!-- footer -->
-        @include('include.footer')
+        @include('admin.include.footer')
         <!-- footer end  -->
     </body>
 
