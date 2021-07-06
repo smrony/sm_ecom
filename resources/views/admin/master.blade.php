@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <!-- content -->
-                    @yield('site_content')
+                    @yield('content')
                     <!-- content end -->
                 </main>
             </div>
