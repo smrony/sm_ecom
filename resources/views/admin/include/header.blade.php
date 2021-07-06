@@ -8,7 +8,7 @@
  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
  <!-- Bootstrap core CSS -->
- <link href="{ { asset('admin/css/bootstrap.min.css') } }" rel="stylesheet">
+ <link href="{{ URL::asset('admin/css/bootstrap.min.css') }}" rel="stylesheet">
 
  <style>
 .bd-placeholder-img {
@@ -28,4 +28,4 @@
 
 
  <!-- Custom styles for this template -->
- <link href="{ { asset('admin/dashboard.css') } }" rel="stylesheet">
+ <link href="{{ URL::asset('admin/dashboard.css') }}" rel="stylesheet">
