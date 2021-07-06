@@ -23,7 +23,7 @@ class CreateCategoriesTable extends Migration
             $table->integer('created_by');
             $table->string('image');
             $table->timestamps('ceated_at');
-            $table->timestamps('modified_at');
+            $table->timestamps('updated_at');
             $table->timestamps('deleted_at');
         });
     }
