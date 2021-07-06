@@ -15,16 +15,16 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id(); 
-            $table->string('name');
-            $table->text('description');
-            $table->string('slug');
-            $table->string('status');
-            $table->integer('parent');
-            $table->integer('created_by');
-            $table->string('image');
-            $table->timestamps('ceated_at');
-            $table->timestamps('updated_at');
-            $table->timestamps('deleted_at');
+            $table->string('category_name',100);
+            $table->string('slug',100);
+            $table->integer('parent')->default(0); //for sub menu by default 0 
+            $table->text('description')->nullable(); //by default nullable
+            $table->tinyInteger('status')->default(1);//by default 1
+            $table->unsignedBigInteger('created_by'); //for relation with user table column id 
+            $table->string('image',255);
+            // $table->timestamps('created_at');
+            // $table->timestamps('updated_at');
+            $table->timestamps(); //this is for created_at and updated_at
         });
     }
 
