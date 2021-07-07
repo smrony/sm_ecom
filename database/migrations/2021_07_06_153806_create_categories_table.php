@@ -24,7 +24,7 @@ class CreateCategoriesTable extends Migration
             $table->string('image');
             $table->timestamps('ceated_at');
             $table->timestamps('updated_at');
-            $table->timestamps('deleted_at');
+            
         });
     }
 
