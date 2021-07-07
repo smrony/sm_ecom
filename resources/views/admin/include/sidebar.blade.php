@@ -11,8 +11,8 @@
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown" data-bs-toggle="dropdown"
                     aria-expanded="false"><span data-feather="file"></span>Category</a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown">
-                    <li><a class="dropdown-item" href="#">Add Category</a></li>
-                    <li><a class="dropdown-item" href="#">Category List</a></li>
+                    <li><a class="dropdown-item" href="{{route('categories.create')}}">Add Category</a></li>
+                    <li><a class="dropdown-item" href="{{route('categories.index')}}">Category List</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
