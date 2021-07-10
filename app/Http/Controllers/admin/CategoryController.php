@@ -55,17 +55,18 @@ class CategoryController extends Controller
 
         //create object of category class 
         //and access property
-        $store = new Category; 
+        $store = new Category;  
 
         $store->category_name=$request->category_name;
+        $store->category_name=$request->validate(['category_name' => ['required']]);
 
-        $store->slug=Str::slug($request->category_name);
+        $store->slug=Str::slug($request->validate(['category_name' => ['required']]));
 
         $store->parent=$request->parent;
 
-        $store->description=$request->description;
+        $store->description=$request->validate(['description' => ['required']]);
 
-        $store->status=$request->status;
+        $store->status=$request->validate(['status' => ['required']]);
 
         $store->created_by=1; 
 

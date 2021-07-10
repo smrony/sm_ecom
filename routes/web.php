@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('admin.master');
 });
+Route::get('/sm-admin', function () {
+    return view('sm_admin.master');
+});
 Route::group(['namespace'=>'admin'],function(){
    Route::resource('categories','CategoryController');
 }); 

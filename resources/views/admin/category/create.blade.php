@@ -5,7 +5,15 @@
 <div class="row">
     <div class="col-md-12">
         <h4>Create Category</h4>
-
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
         <form method="post" action="{{route('categories.store')}}" enctype="multipart/form-data">
             @csrf
             <div class="form-group mb-2">
@@ -21,12 +29,12 @@
             <div class="form-group mb-2">
                 <label for="category_name">Category Name</label>
                 <input type="text" id="category_name" class="form-control" name="category_name"
-                    placeholder="Category Name" required>
+                    placeholder="Category Name" >
             </div>
 
             <div class="form-group mb-2">
                 <label for="image">Image</label>
-                <input type="file" id="image" class="form-control" name="image" required>
+                <input type="file" id="image" class="form-control" name="image" >
             </div>
 
             <div class="form-group mb-2">
