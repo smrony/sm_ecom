@@ -5,7 +5,7 @@
 <div class="row">
     <div class="col-md-12">
         <h4>Create Category</h4>
-@if ($errors->any())
+{{-- @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
@@ -13,7 +13,7 @@
             @endforeach
         </ul>
     </div>
-@endif
+@endif --}}
         <form method="post" action="{{route('categories.store')}}" enctype="multipart/form-data">
             @csrf
             <div class="form-group mb-2">
@@ -31,17 +31,37 @@
                 <input type="text" id="category_name" class="form-control" name="category_name"
                     placeholder="Category Name" >
             </div>
+            
+            @if($errors->has('category_name'))
+            <div class="alert alert-danger">
+               {{$errors->first('category_name')}}
+            </div>
+            @endif
+
+
 
             <div class="form-group mb-2">
                 <label for="image">Image</label>
                 <input type="file" id="image" class="form-control" name="image" >
             </div>
 
+            @if($errors->has('image'))
+              <div class="alert alert-danger">
+                 {{$errors->first('image')}}
+              </div>
+            @endif
+
             <div class="form-group mb-2">
                 <label for="description">Description</label>
                 <textarea id="description" class="form-control" name="description" cols="5" rows="5"
                     placeholder="Description"></textarea>
             </div>
+
+            @if($errors->has('description'))
+            <div class="alert alert-danger">
+               {{$errors->first('description')}}
+            </div>
+            @endif
 
             <div class="form-group mb-2">
                 <label for="status">Status</label>
