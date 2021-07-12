@@ -1,45 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
     <head>
-        <!-- header -->
         @include('admin.include.header')
-        <!-- header end -->
     </head>
 
     <body>
-        <!-- nav -->
-        @include('admin.include.nav')
-        <!-- nav end -->
-        <div class="container-fluid">
-            <div class="row">
-                <!-- sidebar -->
+        <div>
+            <!--BEGIN THEME SETTING-->
+            <!--END THEME SETTING-->
+            <!--BEGIN BACK TO TOP-->
+            <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
+            <!--END BACK TO TOP-->
+            <!--BEGIN TOPBAR-->
+            @include('admin.include.topbar')
+            <!-- END TOPBAR -->
+            <div id="wrapper">
+                <!-- BEGIN SIDEBAR MENU -->
                 @include('admin.include.sidebar')
-                <!-- sidebar end -->
-                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                    <div
-                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">Dashboard</h1>
-                        <div class="btn-toolbar mb-2 mb-md-0">
-                            <div class="btn-group me-2">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                            </div>
-                            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                                <span data-feather="calendar"></span>
-                                This week
-                            </button>
+                <!--END SIDEBAR MENU-->
+                <!--BEGIN CHAT FORM-->
+                 @include('admin.include.chat')
+                <!--END CHAT FORM-->
+                <!--BEGIN PAGE WRAPPER-->
+                <div id="page-wrapper">
+                    <!--BEGIN TITLE & BREADCRUMB PAGE-->
+                    <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+                        <div class="page-header pull-left">
+                            <div class="page-title">Dashboard</div>
                         </div>
+                        <ol class="breadcrumb page-breadcrumb pull-right">
+                            <li><i class="fa fa-home"></i>&nbsp;<a href="">Home</a>&nbsp;&nbsp;<i
+                                    class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+                            <li class="hidden"><a href="#">Dashboard</a>&nbsp;&nbsp;<i
+                                    class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+                            <li class="active">Dashboard</li>
+                        </ol>
+                        <div class="clearfix"></div>
                     </div>
+                    <!--END TITLE & BREADCRUMB PAGE-->
+                    <!--BEGIN CONTENT-->
                     <!-- content -->
                     @yield('content')
                     <!-- content end -->
-                </main>
-            </div>
-        </div>
-        <!-- footer -->
-        @include('admin.include.footer')
-        <!-- footer end  -->
+                    @include('admin.include.homeContent')
+                    <!--END CONTENT-->
+                    <!--BEGIN FOOTER-->
+                    @include('admin.include.footer')
     </body>
 
 </html>
