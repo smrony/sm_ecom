@@ -10,6 +10,8 @@ use Illuminate\Support\Str;
 
 use App\admin\Category;
 
+use App\Http\Requests\CategoryValidation;
+
 
 
 class CategoryController extends Controller
@@ -45,7 +47,7 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryValidation $request)
     {
         //check if file is upload
         if($request->hasFile('image')){
@@ -58,15 +60,14 @@ class CategoryController extends Controller
         $store = new Category;  
 
         $store->category_name=$request->category_name;
-        $store->category_name=$request->validate(['category_name' => ['required']]);
 
-        $store->slug=Str::slug($request->validate(['category_name' => ['required']]));
+        $store->slug=Str::slug($request->category_name);
 
         $store->parent=$request->parent;
 
-        $store->description=$request->validate(['description' => ['required']]);
+        $store->description=$request->description;
 
-        $store->status=$request->validate(['status' => ['required']]);
+        $store->status=$request->status;
 
         $store->created_by=1; 
 
